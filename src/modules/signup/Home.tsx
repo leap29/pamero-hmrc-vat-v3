@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import screenshot from "../../images/screenshot.png";
-import pastOrders from "../../images/pastorders.png";
+import pastOrders from "../../images/pastOrders.png";
 //import bestSellers from "../../images/bestSellers.png";
 //import yourshoppingcart from "../../images/yourshoppingcart.png";
 //import { Hero } from "../../common/hero/Hero";
