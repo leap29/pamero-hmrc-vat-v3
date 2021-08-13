@@ -78,14 +78,19 @@ export default class Signup extends React.Component<SignupProps, SignupState> {
     }
 
     onSignup = async (event: React.FormEvent<HTMLFormElement>) => {
+        console.log("Signing Up");
+        alert("Signing Up");
         event.preventDefault();
         this.setState({ loading: true });
 
         try {
+            console.log(event);
             const user = await Auth.signUp({
                 username: this.state.email,
                 password: this.state.password
             });
+            console.log(user);
+            alert(user);
             this.setState({ user, loading: false });
         } catch (e) {
             alert(e.message);
@@ -176,7 +181,7 @@ export default class Signup extends React.Component<SignupProps, SignupState> {
                     size="lg"
                     type="submit"
                     disabled={this.state.passwordValid !== 'success' || this.state.confirmPasswordValid !== 'success' || this.state.emailValid !== 'success'}>
-                    {this.state.loading}Log in
+                    {this.state.loading}Sign Up!
                 </Button>
             </Form>
         );

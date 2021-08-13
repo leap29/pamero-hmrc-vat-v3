@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 import Amplify from "aws-amplify";
-import config from "./config";
+//import config from "./config";
+import awsmobile from "./aws-exports";
 import registerServiceWorker from './registerServiceWorker';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,6 +14,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+Amplify.configure(awsmobile);
+/*
 Amplify.configure({
     Auth: {
         mandatorySignIn: true,
@@ -56,7 +60,7 @@ Amplify.configure({
         ]
     }
 });
-
+*/
 ReactDOM.render(
     <Router>
         <App />
