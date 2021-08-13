@@ -112,7 +112,7 @@ class App extends Component<AppProps, AppState> {
                 <Navbar collapseOnSelect>
                     <Navbar.Brand>
                         <Link to="/">
-                            <span className="orange"> <img src={logo} alt="bookstore" /> BOOKSTORE</span>
+                            <span className="orange"> <img src={logo} alt="Vat Returns" /> VAT</span>
                         </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
