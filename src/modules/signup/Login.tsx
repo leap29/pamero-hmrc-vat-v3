@@ -71,7 +71,7 @@ export default class Login extends React.Component<LoginProps, LoginState> {
 
         return (
             <div className="Login">
-                <Form noValidate validated={this.state.passwordValid == 'success' && this.state.emailValid == 'success' } onSubmit={this.onLogin} >
+                <Form noValidate validated={this.state.passwordValid === 'success' && this.state.emailValid === 'success' } onSubmit={this.onLogin} >
                     <FormGroup controlId="email" >
                         <FormLabel>Email</FormLabel>
                         <FormControl

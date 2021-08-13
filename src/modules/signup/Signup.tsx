@@ -138,7 +138,7 @@ export default class Signup extends React.Component<SignupProps, SignupState> {
 
     showSignupForm = () => {
         return (
-            <Form noValidate validated={this.state.emailValid == 'success' && this.state.passwordValid == 'success' && this.state.confirmPasswordValid == 'success' } onSubmit={this.onSignup}>
+            <Form noValidate validated={this.state.emailValid === 'success' && this.state.passwordValid === 'success' && this.state.confirmPasswordValid === 'success' } onSubmit={this.onSignup}>
                 <FormGroup controlId="email" >
                     <FormLabel>Email</FormLabel>
                     <FormControl

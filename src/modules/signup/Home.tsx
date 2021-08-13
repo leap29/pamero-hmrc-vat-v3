@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import screenshot from "../../images/screenshot.png";
-import pastorders from "../../images/pastorders.png";
+import pastOrders from "../../images/pastorders.png";
 //import bestSellers from "../../images/bestSellers.png";
 //import yourshoppingcart from "../../images/yourshoppingcart.png";
 //import { Hero } from "../../common/hero/Hero";
@@ -64,7 +64,7 @@ export default class Home extends Component<HomeProps, HomeState> {
                     <div className="col-md-4 ad-padding">
                         <div className="container-category no-padding">
                             <LinkContainer to="/past">
-                                <img src={pastorders} alt="Past returns"></img>
+                                <img src={pastOrders} alt="Past returns"></img>
                             </LinkContainer>
                         </div>
                     </div>
