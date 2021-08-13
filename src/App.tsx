@@ -117,7 +117,7 @@ class App extends Component<AppProps, AppState> {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse>
-                        <Nav justify={true}>
+                        <Nav>
                             {this.state.isAuthenticated ? this.showLoggedInBar() : this.showLoggedOutBar()}
                         </Nav>
                     </Navbar.Collapse>
