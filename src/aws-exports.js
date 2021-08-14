@@ -23,7 +23,14 @@ const awsmobile = {
             "REQUIRES_NUMBERS",
             "REQUIRES_UPPERCASE"
         ]
-    }
+    },
+    "aws_cloud_logic_custom": [
+        {
+            "name": "vatrestapi",
+            "endpoint": "https://xl1vi4wbqd.execute-api.eu-west-2.amazonaws.com/staging",
+            "region": "eu-west-2"
+        }
+    ]
 };
 
 

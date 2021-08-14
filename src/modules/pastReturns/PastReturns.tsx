@@ -38,18 +38,34 @@ export default class PastPurchases extends Component<PastPurchasesProps, PastPur
         this.setState({ userInfo })
 
         try {
-            const orders = await this.listOrders();
-            this.setState({
-                orders: orders,
-                isLoading: false
-            });
+            //const orders = await this.listOrders();
+            //this.setState({
+            //    orders: orders,
+            //    isLoading: false
+            //});
+            const returns = await this.listReturns();
+            alert(returns);
+            console.log(returns);
         } catch (e) {
+            console.log(e.response)
             alert(e);
         }
     }
 
     listOrders() {
         return API.get("orders", "/orders", null);
+    }
+
+    listReturns() {
+        const myInit = { // OPTIONAL
+            headers: {}, // OPTIONAL
+            response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
+            queryStringParameters: {  // OPTIONAL
+                "firstName": "Geoff",
+                "lastName": "King"
+            },
+        };
+        return API.get("vatrestapi", "/returns", "{'firstName':'Geoff'}");
     }
 
     getPrettyDate = (orderDate: number) => {

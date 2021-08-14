@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "name": "/returns",
+      "lambdaFunction": "pamerohmrcvatv34086abd5",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/returns"
+    }
+  ],
+  "resourceName": "vatrestapi",
+  "apiName": "vatrestapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "pamerohmrcvatv34086abd5"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-amplify35056dc4956a4-staging-211613-authRole",
+    "unAuthRoleName": "amplify-amplify35056dc4956a4-staging-211613-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "pamerohmrcvatv34086abd5",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

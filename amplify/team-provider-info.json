@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "pamerohmrcvatv3": {}
+      },
+      "function": {
+        "pamerohmrcvatv34086abd5": {
+          "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
+          "s3Key": "amplify-builds/pamerohmrcvatv34086abd5-3075354352544f496341-build.zip"
+        }
       }
     }
   }
