@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "name": "/hmrcbuildauthurl",
+      "lambdaFunction": "functionhmrcbuildauthurl",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/hmrcbuildauthurl"
+    }
+  ],
+  "resourceName": "apihmrcgetauthurl",
+  "apiName": "apihmrcgetauthurl",
+  "functionArns": [
+    {
+      "lambdaFunction": "functionhmrcbuildauthurl"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-amplify35056dc4956a4-staging-211613-authRole",
+    "unAuthRoleName": "amplify-amplify35056dc4956a4-staging-211613-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "functionhmrcbuildauthurl",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

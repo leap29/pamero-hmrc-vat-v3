@@ -16,9 +16,21 @@
         "pamerohmrcvatv3": {}
       },
       "function": {
-        "pamerohmrcvatv34086abd5": {
+        "hmrcvatreturn": {
           "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
-          "s3Key": "amplify-builds/pamerohmrcvatv34086abd5-3075354352544f496341-build.zip"
+          "s3Key": "amplify-builds/hmrcvatreturn-6d6234306f514c47532b-build.zip"
+        },
+        "hmrcauthtokenexchange": {
+          "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
+          "s3Key": "amplify-builds/hmrcauthtokenexchange-6d6f35727a3372437252-build.zip"
+        },
+        "hmrcgetvatobligations": {
+          "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
+          "s3Key": "amplify-builds/hmrcgetvatobligations-3745302f78596b31716a-build.zip"
+        },
+        "functionhmrcbuildauthurl": {
+          "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
+          "s3Key": "amplify-builds/functionhmrcbuildauthurl-316a456867656870386a-build.zip"
         }
       }
     }

@@ -1,0 +1,9 @@
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 300
+      MemorySize: 128
+      Handler: example.LambdaRequestHandler
+      CodeUri: C:\Users\dan\IdeaProjects\pamero-hmrc-vat-v3\amplify\backend\function\hmrcauthtokenexchange
+      Runtime: java11

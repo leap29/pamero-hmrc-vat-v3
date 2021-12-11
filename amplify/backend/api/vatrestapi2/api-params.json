@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "name": "/return/{returnid}",
+      "lambdaFunction": "hmrcvatreturn",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/return/*"
+    }
+  ],
+  "resourceName": "vatrestapi2",
+  "apiName": "vatrestapi2",
+  "functionArns": [
+    {
+      "lambdaFunction": "hmrcvatreturn"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-amplify35056dc4956a4-staging-211613-authRole",
+    "unAuthRoleName": "amplify-amplify35056dc4956a4-staging-211613-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "hmrcvatreturn",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

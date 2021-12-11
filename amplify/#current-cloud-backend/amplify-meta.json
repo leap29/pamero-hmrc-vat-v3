@@ -35,6 +35,13 @@
         "mfaConfiguration": "OFF",
         "mfaTypes": [
           "SMS"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
         ]
       },
       "output": {
@@ -46,7 +53,7 @@
         "IdentityPoolName": "testAuthIdentityPool__staging",
         "UserPoolName": "pamerohmrcvatv3"
       },
-      "lastPushTimeStamp": "2021-08-14T16:06:40.880Z",
+      "lastPushTimeStamp": "2021-12-08T18:34:17.252Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/auth/pamerohmrcvatv3-cloudformation-template.yml",
         "logicalId": "authpamerohmrcvatv3"
@@ -54,40 +61,117 @@
     }
   },
   "function": {
-    "pamerohmrcvatv34086abd5": {
+    "hmrcvatreturn": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2021-08-14T16:04:37.115Z",
+      "dependsOn": [],
+      "lastBuildTimeStamp": "2021-11-26T16:53:53.272Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2021-08-14T16:04:37.142Z",
-      "distZipFilename": "pamerohmrcvatv34086abd5-3075354352544f496341-build.zip",
+      "lastPackageTimeStamp": "2021-11-26T16:53:53.311Z",
+      "distZipFilename": "hmrcvatreturn-6d6234306f514c47532b-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
-        "s3Key": "amplify-builds/pamerohmrcvatv34086abd5-3075354352544f496341-build.zip"
+        "s3Key": "amplify-builds/hmrcvatreturn-6d6234306f514c47532b-build.zip"
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/function/pamerohmrcvatv34086abd5-cloudformation-template.json",
-        "logicalId": "functionpamerohmrcvatv34086abd5"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/function/hmrcvatreturn-cloudformation-template.json",
+        "logicalId": "functionhmrcvatreturn"
       },
-      "lastPushTimeStamp": "2021-08-14T16:06:40.908Z",
+      "lastPushTimeStamp": "2021-12-08T18:34:17.263Z",
       "output": {
         "Region": "eu-west-2",
-        "Arn": "arn:aws:lambda:eu-west-2:155498800615:function:pamerohmrcvatv34086abd5-staging",
-        "Name": "pamerohmrcvatv34086abd5-staging",
-        "LambdaExecutionRole": "pamerohmrcvatv3LambdaRolef3aa749d-staging"
+        "Arn": "arn:aws:lambda:eu-west-2:155498800615:function:hmrcvatreturn-staging",
+        "Name": "hmrcvatreturn-staging",
+        "LambdaExecutionRole": "pamerohmrcvatv3LambdaRole1ea62d38-staging"
       },
-      "lastPushDirHash": "HsqwqVCwL4sw8EnhwfPGRQJAlyM="
+      "lastPushDirHash": "iCQbNAojRFBBqf9R2aKft5wBLdk=",
+      "lastDevBuildTimeStamp": "2021-08-15T13:08:51.199Z"
+    },
+    "hmrcauthtokenexchange": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2021-12-01T22:40:22.154Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2021-12-01T22:40:22.232Z",
+      "distZipFilename": "hmrcauthtokenexchange-6d6f35727a3372437252-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
+        "s3Key": "amplify-builds/hmrcauthtokenexchange-6d6f35727a3372437252-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/function/hmrcauthtokenexchange-cloudformation-template.json",
+        "logicalId": "functionhmrcauthtokenexchange"
+      },
+      "lastPushTimeStamp": "2021-12-08T18:34:17.275Z",
+      "output": {
+        "Region": "eu-west-2",
+        "Arn": "arn:aws:lambda:eu-west-2:155498800615:function:hmrcauthtokenexchange-staging",
+        "Name": "hmrcauthtokenexchange-staging",
+        "LambdaExecutionRole": "pamerohmrcvatv3LambdaRole7dada380-staging"
+      },
+      "lastPushDirHash": "Kf833YplTraFsDi8m5dzWmHkRLs="
+    },
+    "hmrcgetvatobligations": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2021-12-08T18:33:12.254Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2021-12-08T18:33:12.317Z",
+      "distZipFilename": "hmrcgetvatobligations-3745302f78596b31716a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
+        "s3Key": "amplify-builds/hmrcgetvatobligations-3745302f78596b31716a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/function/hmrcgetvatobligations-cloudformation-template.json",
+        "logicalId": "functionhmrcgetvatobligations"
+      },
+      "lastPushTimeStamp": "2021-12-08T18:34:17.373Z",
+      "output": {
+        "Region": "eu-west-2",
+        "Arn": "arn:aws:lambda:eu-west-2:155498800615:function:hmrcgetvatobligations-staging",
+        "Name": "hmrcgetvatobligations-staging",
+        "LambdaExecutionRole": "pamerohmrcvatv3LambdaRoled532862b-staging"
+      },
+      "lastPushDirHash": "qRTR4Tpi/ld2asmUOanxrEuRd1c="
+    },
+    "functionhmrcbuildauthurl": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2021-11-26T16:54:01.998Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2021-11-26T16:54:02.023Z",
+      "distZipFilename": "functionhmrcbuildauthurl-316a456867656870386a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-amplify35056dc4956a4-staging-211613-deployment",
+        "s3Key": "amplify-builds/functionhmrcbuildauthurl-316a456867656870386a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/function/functionhmrcbuildauthurl-cloudformation-template.json",
+        "logicalId": "functionfunctionhmrcbuildauthurl"
+      },
+      "lastPushTimeStamp": "2021-12-08T18:34:17.301Z",
+      "output": {
+        "Region": "eu-west-2",
+        "Arn": "arn:aws:lambda:eu-west-2:155498800615:function:functionhmrcbuildauthurl-staging",
+        "Name": "functionhmrcbuildauthurl-staging",
+        "LambdaExecutionRole": "pamerohmrcvatv3LambdaRolee11b3d73-staging"
+      },
+      "lastPushDirHash": "28Yp6FUBnGio1TEaTXgsqyy5/mY="
     }
   },
   "api": {
-    "vatrestapi": {
+    "vatrestapi2": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "pamerohmrcvatv34086abd5",
+          "resourceName": "hmrcvatreturn",
           "attributes": [
             "Name",
             "Arn"
@@ -95,16 +179,91 @@
         }
       ],
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/api/vatrestapi-cloudformation-template.json",
-        "logicalId": "apivatrestapi"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/api/vatrestapi2-cloudformation-template.json",
+        "logicalId": "apivatrestapi2"
       },
-      "lastPushTimeStamp": "2021-08-14T16:06:40.908Z",
+      "lastPushTimeStamp": "2021-12-08T18:34:17.313Z",
       "output": {
-        "ApiName": "vatrestapi",
-        "RootUrl": "https://xl1vi4wbqd.execute-api.eu-west-2.amazonaws.com/staging",
-        "ApiId": "xl1vi4wbqd"
+        "ApiName": "vatrestapi2",
+        "RootUrl": "https://177tv4wkq9.execute-api.eu-west-2.amazonaws.com/staging",
+        "ApiId": "177tv4wkq9"
       },
-      "lastPushDirHash": "mMl6TVC2dS+2LUF2mli+cOhgMCc="
+      "lastPushDirHash": "oMg9SBLDnCloyM+sS/HTatTvh5Y="
+    },
+    "hmrcauth": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "hmrcauthtokenexchange",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/api/hmrcauth-cloudformation-template.json",
+        "logicalId": "apihmrcauth"
+      },
+      "lastPushTimeStamp": "2021-12-08T18:34:17.326Z",
+      "output": {
+        "ApiName": "hmrcauth",
+        "RootUrl": "https://pmziml8367.execute-api.eu-west-2.amazonaws.com/staging",
+        "ApiId": "pmziml8367"
+      },
+      "lastPushDirHash": "WgRuPmqmV9SadHixiFMJXlOUTO0="
+    },
+    "apihmrcvatobligations": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "hmrcgetvatobligations",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/api/apihmrcvatobligations-cloudformation-template.json",
+        "logicalId": "apiapihmrcvatobligations"
+      },
+      "lastPushTimeStamp": "2021-12-08T18:34:17.339Z",
+      "output": {
+        "ApiName": "apihmrcvatobligations",
+        "RootUrl": "https://l5xcyb1vx6.execute-api.eu-west-2.amazonaws.com/staging",
+        "ApiId": "l5xcyb1vx6"
+      },
+      "lastPushDirHash": "2GfB9fuV+SE/t0Ad4C8/Wdjjf84="
+    },
+    "apihmrcgetauthurl": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "functionhmrcbuildauthurl",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35056dc4956a4-staging-211613-deployment/amplify-cfn-templates/api/apihmrcgetauthurl-cloudformation-template.json",
+        "logicalId": "apiapihmrcgetauthurl"
+      },
+      "lastPushTimeStamp": "2021-12-08T18:34:17.351Z",
+      "output": {
+        "ApiName": "apihmrcgetauthurl",
+        "RootUrl": "https://cla08ed0xf.execute-api.eu-west-2.amazonaws.com/staging",
+        "ApiId": "cla08ed0xf"
+      },
+      "lastPushDirHash": "ZsO/jqsNa9aTZyMfmu9K8a+D5Bo="
     }
   }
 }

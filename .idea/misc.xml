@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/amplify/backend/function/functionhmrcbuildauthurl" />
+    <file type="web" url="file://$PROJECT_DIR$/amplify/backend/function/hmrcauthtokenexchange" />
+    <file type="web" url="file://$PROJECT_DIR$/amplify/backend/function/hmrcgetvatobligations" />
+    <file type="web" url="file://$PROJECT_DIR$/amplify/backend/function/hmrcvatreturn" />
+    <file type="web" url="file://$PROJECT_DIR$/amplify/backend/function/pamerovatregv31" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
