@@ -61,13 +61,16 @@ export default class Login extends React.Component<LoginProps, LoginState> {
             this.props.userHasAuthenticated(true);
             this.setState({ redirect: true })
         } catch (e) {
-            alert(e.message);
+            //TODO Proper Login Failure Logic
+            alert("Login Failed: "+e.message);
             this.setState({ loading: false });
         }
     }
 
     render() {
         if (this.state.redirect) return <Redirect to='/' />
+
+        //TODO Also need to add things like a forgot password link
 
         return (
             <div className="Login">

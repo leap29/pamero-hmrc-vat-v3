@@ -8,7 +8,10 @@ const awsmobile = {
     "aws_user_pools_id": "eu-west-2_S6UcoM7cS",
     "aws_user_pools_web_client_id": "1c9ssa9lp06jioomvfaf0phn64",
     "oauth": {},
-    "aws_cognito_login_mechanism": [],
+    "aws_cognito_username_attributes": [
+        "EMAIL"
+    ],
+    "aws_cognito_social_providers": [],
     "aws_cognito_signup_attributes": [
         "EMAIL"
     ],
@@ -24,13 +27,32 @@ const awsmobile = {
             "REQUIRES_UPPERCASE"
         ]
     },
+    "aws_cognito_verification_mechanisms": [
+        "EMAIL"
+    ],
     "aws_cloud_logic_custom": [
         {
-            "name": "vatrestapi",
-            "endpoint": "https://xl1vi4wbqd.execute-api.eu-west-2.amazonaws.com/staging",
+            "name": "vatrestapi2",
+            "endpoint": "https://177tv4wkq9.execute-api.eu-west-2.amazonaws.com/staging",
+            "region": "eu-west-2"
+        },
+        {
+            "name": "hmrcauth",
+            "endpoint": "https://pmziml8367.execute-api.eu-west-2.amazonaws.com/staging",
+            "region": "eu-west-2"
+        },
+        {
+            "name": "apihmrcvatobligations",
+            "endpoint": "https://l5xcyb1vx6.execute-api.eu-west-2.amazonaws.com/staging",
+            "region": "eu-west-2"
+        },
+        {
+            "name": "apihmrcgetauthurl",
+            "endpoint": "https://cla08ed0xf.execute-api.eu-west-2.amazonaws.com/staging",
             "region": "eu-west-2"
         }
-    ]
+    ],
+    "aws_cognito_login_mechanism": []
 };
 
 

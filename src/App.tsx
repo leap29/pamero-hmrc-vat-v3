@@ -1,131 +1,122 @@
-import logo from './logo.svg';
+import React from 'react';
+//import logo from './logo.svg';
+//import { Counter } from './features/counter/Counter';
 import './App.css';
-import { Auth } from "aws-amplify";
-import React, { Component, Fragment } from "react";
-import { LinkContainer } from "react-router-bootstrap";
-import { Link, withRouter } from "react-router-dom";
-import { Nav, Navbar, NavItem } from "react-bootstrap";
-import { Routes } from "./Routes";
-/*
+import {Obligations} from "./features/obligations/Obligations";
+import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import {NavbarNew} from "./app/NavbarNew";
+import {UploadObligation} from "./features/obligations/UploadObligation";
+import {Payments} from "./features/payments/Payments";
+import {Col, Container, Nav, Row} from "react-bootstrap";
+import {User} from "./features/user/User";
+import {TokenGenerator} from "./features/user/TokenGenerator";
+import {Login} from "./features/user/Login";
+
 function App() {
-  return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>Hello from V2</h1>
-        </header>
-      </div>
+    return (
+        <Router>
+            <NavbarNew/>
+            <div className="App">
+                <Container>
+                    <Row>
+                        <Col xs={2}>
+                            <Nav defaultActiveKey="/" className="flex-column">
+                                <Nav.Link as={Link} to={"/dashboard/obligations"}>Obligations</Nav.Link>
+                                <Nav.Link as={Link} to={"/dashboard/payments"}>Payments</Nav.Link>
+                                <Nav.Link eventKey="link-2">Link</Nav.Link>
+                                <Nav.Link eventKey="disabled" disabled>
+                                    Disabled
+                                </Nav.Link>
+                            </Nav>
+                        </Col>
+                        <Col>
+                            <Switch>
+                                <Route
+                                    exact={true}
+                                    path={"/"}
+                                    render={() => (
+                                        <React.Fragment>
+                                            <Login/>
+                                            <User/>
+                                        </React.Fragment>
+                                    )}
+                                />
+                                <Route
+                                    exact={true}
+                                    path={"/dashboard/obligations"}
+                                    render={() => (
+                                        <React.Fragment>
+                                            <Obligations/>
+                                        </React.Fragment>
+                                    )}
+                                />
+                                <Route exact path="/obligation/:obligationPeriodKey" component={UploadObligation} />
+                                <Route exact path="/dashboard/payments" component={Payments} />
+                                <Route path="/hmrcauthcode" exact component={TokenGenerator}  />
+                            </Switch>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        </Router>
+    )
+}
+
+//TODO  Add Drag and Drop
+// https://codesandbox.io/s/0yr672zx2n?file=/App.js
+// https://react-dropzone.js.org/
+
+/*
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Counter />
+        <Obligations />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <span>
+          <span>Learn </span>
+          <a
+            className="App-link"
+            href="https://reactjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React
+          </a>
+          <span>, </span>
+          <a
+            className="App-link"
+            href="https://redux.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux
+          </a>
+          <span>, </span>
+          <a
+            className="App-link"
+            href="https://redux-toolkit.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux Toolkit
+          </a>
+          ,<span> and </span>
+          <a
+            className="App-link"
+            href="https://react-redux.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React Redux
+          </a>
+        </span>
+      </header>
+    </div>
   );
 }
-
-export default App;
 */
 
-
-interface AppProps {
-    history: any;
-}
-
-interface AppState {
-    isAuthenticated: boolean;
-    isAuthenticating: boolean;
-}
-
-class App extends Component<AppProps, AppState> {
-    constructor(props: AppProps) {
-        super(props);
-
-        this.state = {
-            isAuthenticated: false,
-            isAuthenticating: true
-        };
-
-        document.title = "Bookstore Demo"
-    }
-
-    async componentDidMount() {
-        try {
-            //TODO Implement Auth
-            if (await Auth.currentSession()) {
-                this.userHasAuthenticated(true);
-            }
-        }
-        catch(e) {
-            if (e !== 'No current user') {
-                alert(e);
-            }
-        }
-
-        this.setState({ isAuthenticating: false });
-    }
-
-    userHasAuthenticated = (authenticated: boolean) => {
-        this.setState({ isAuthenticated: authenticated });
-    }
-
-    handleLogout = async () => {
-        await Auth.signOut();
-
-        this.userHasAuthenticated(false);
-        this.props.history.push("/login");
-    }
-
-    showLoggedInBar = () => (
-        <Fragment>
-            <LinkContainer to="/past">
-                <NavItem><span className="orange line-height-24">Past orders</span></NavItem>
-            </LinkContainer>
-            <LinkContainer to="/best">
-                <NavItem><span className="orange line-height-24">Best sellers</span></NavItem>
-            </LinkContainer>
-            <NavItem onClick={this.handleLogout}><span className="orange line-height-24">Log out</span></NavItem>
-            <LinkContainer to="/cart">
-                <NavItem>
-                    <div className="shopping-icon-container">
-                        <span className="glyphicon glyphicon-shopping-cart white" aria-hidden="true"></span>
-                    </div>
-                </NavItem>
-            </LinkContainer>
-        </Fragment>
-    );
-
-    showLoggedOutBar = () => (
-        <Fragment>
-            <LinkContainer to="/signup">
-                <NavItem><span className="orange">Sign up</span></NavItem>
-            </LinkContainer>
-            <LinkContainer to="/login">
-                <NavItem><span className="orange">Log in</span></NavItem>
-            </LinkContainer>
-        </Fragment>
-    );
-
-    render() {
-        const childProps = {
-            isAuthenticated: this.state.isAuthenticated,
-            userHasAuthenticated: this.userHasAuthenticated
-        };
-
-        return (
-            !this.state.isAuthenticating &&
-            <div className="App container">
-                <Navbar collapseOnSelect>
-                    <Navbar.Brand>
-                        <Link to="/">
-                            <span className="orange"> <img src={logo} alt="Vat Returns" /> VAT</span>
-                        </Link>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                    <Navbar.Collapse>
-                        <Nav>
-                            {this.state.isAuthenticated ? this.showLoggedInBar() : this.showLoggedOutBar()}
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
-                <Routes isAuthenticated={childProps.isAuthenticated} userHasAuthenticated={childProps.userHasAuthenticated} />
-            </div>
-        );
-    }
-}
-
-export default withRouter(App as any);
+export default App;

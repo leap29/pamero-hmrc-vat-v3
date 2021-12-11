@@ -9,6 +9,7 @@ import Signup from "./modules/signup/Signup";
 //import CategoryView from "./modules/category/CategoryView";
 //import ShoppingCart from "./modules/cart/ShoppingCart";
 import PastPurchases from "./modules/pastReturns/PastReturns";
+import HMRCRedirect from "./modules/signup/HMRCRedirect";
 //import BestSellers from "./modules/bestSellers/BestSellers";
 //import SearchView from "./modules/search/SearchView";
 import PropsRoute from "./common/PropsRoute";
@@ -31,11 +32,14 @@ export const Routes: React.FunctionComponent<RouteProps> = (childProps) =>
 */}
 
         <Route path="/past" exact component={PastPurchases} />
+        <PropsRoute path="/hmrcauthcode" exact component={HMRCRedirect} props={childProps} />
 
-{/*
+        {/*
+        <PropsRoute path="/obligations" exact component={Obligations} props={childProps} />
         <Route path="/checkout" exact component={Checkout} />
         <Route path="/checkout-confirm" exact component={CheckoutConfirm} />
         <Route path="/search/:id" exact component={SearchView} />
 */}
+
         <Route component={NotFound} />
     </Switch>;

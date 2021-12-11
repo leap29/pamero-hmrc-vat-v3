@@ -44,11 +44,12 @@ export default class PastPurchases extends Component<PastPurchasesProps, PastPur
             //    isLoading: false
             //});
             const returns = await this.listReturns();
-            alert(returns);
-            console.log(returns);
+            alert("Worked: "+returns.response);
+            console.log("Worked: "+returns.authCodeURL);
+            window.location.href = returns.authCodeURL;
         } catch (e) {
-            console.log(e.response)
-            alert(e);
+            console.log("Failed: "+e.response)
+            alert("Failed: "+e.response);
         }
     }
 
@@ -58,14 +59,16 @@ export default class PastPurchases extends Component<PastPurchasesProps, PastPur
 
     listReturns() {
         const myInit = { // OPTIONAL
-            headers: {}, // OPTIONAL
-            response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
+            //headers: {}, // OPTIONAL
+            //response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
+            //body: {},
             queryStringParameters: {  // OPTIONAL
-                "firstName": "Geoff",
-                "lastName": "King"
             },
         };
-        return API.get("vatrestapi", "/returns", "{'firstName':'Geoff'}");
+        //TODO - This is only a note - remember never pass a body (even an empty one) for a GET request or API Gateway
+        // will intercept it before it gets to Lambda and all you'll get back is a CORS error as there will be no
+        // access-control-allow-origin: * set by the proxy
+        return API.get("apihmrcgetauthurl", "/hmrcbuildauthurl", myInit);
     }
 
     getPrettyDate = (orderDate: number) => {
@@ -97,7 +100,7 @@ export default class PastPurchases extends Component<PastPurchasesProps, PastPur
                                 */}
                             </div>)
                     }
-                    </div>
+                </div>
 {/*}
                     <div className="well-bs no-margin-top no-padding col-md-12">
                         <a href="/best"><img src={bestSellers} alt="Best sellers" className="checkout-img no-padding" /></a>
