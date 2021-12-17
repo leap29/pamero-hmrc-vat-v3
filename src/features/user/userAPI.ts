@@ -4,7 +4,7 @@ import {API} from "aws-amplify";
 export function buildHMRCURL() {
 
   const myInit = { // OPTIONAL
-    //headers: {}, // OPTIONAL
+    headers: {"local-mode": true}, // OPTIONAL
     //response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
     //body: {},
     queryStringParameters: {  // OPTIONAL

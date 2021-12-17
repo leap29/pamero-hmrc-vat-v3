@@ -74,6 +74,15 @@ public class LambdaRequestHandler implements RequestHandler<APIGatewayProxyReque
             Map<String, String> headers = request.getHeaders();
             logger.log("Headers: "+headers.toString());
 
+            boolean localMode = false;
+            String localModeString = headers.get("local-mode");
+            if (localModeString != null && localModeString.equalsIgnoreCase("true")) {
+                logger.log("Setting local mode to true");
+                localMode = true;
+            } else {
+                logger.log("Local mode is false");
+            }
+
 
             //////////////////////////////// DO SPECIFIC STUFF HERE ///////////////////////////////////
 
@@ -81,7 +90,12 @@ public class LambdaRequestHandler implements RequestHandler<APIGatewayProxyReque
             String clientId = "CubSFaPgkOWyjPWkZGPBM99uYYRM";
             String clientSecret = "594ad69b-4574-40a0-9a78-1994ecdc257e";
             String scope = "read:vat+write:vat";
-            String redirectUri = "http://localhost:3000/hmrcauthcode";
+            String redirectUri;
+            if (localMode) {
+                redirectUri = "http://localhost:3000/hmrcauthcode";
+            } else {
+                redirectUri = "https://www.acrovat.co.uk/hmrcauthcode";
+            }
 
             // construct the OAuth 2.0 Authorize request
 
